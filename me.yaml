@@ -1,0 +1,10 @@
+name: Jane Doe
+email: jane@example.com
+phone: "+49 123 4567890"
+location: Berlin, Germany
+website: janedoe.dev
+linkedin: jane-doe
+github: janedoe
+skills:
+  languages: [Kotlin, TypeScript, Rust, Python]
+  frameworks: [React, Next.js, Three.js, Ktor]
