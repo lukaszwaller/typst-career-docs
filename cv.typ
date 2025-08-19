@@ -51,19 +51,25 @@
       align(right)[#xp.date]
     }
   ])
+
   if xp.at("description") != none {
+    set par(leading: 0.6em)
+
     if type(xp.description) == array {
-      set par(leading: 0.6em)
-      set list(indent: 0.6em)
-      for item in xp.description {
-        list(item)
+      {
+        set list(indent: 0.6em, spacing: 0.4em)
+        show list: set block(above: 0.4em, below: 0.4em)
+
+        for item in xp.description [
+          - #item
+        ]
       }
     } else {
-      // fallback if someone provided a single string instead of a list
-      set par(leading: 0.6em)
+      set par(spacing: 0.2em)
       xp.description
     }
   }
+  block(below: 0.2em)
 }
 
 == Projects
