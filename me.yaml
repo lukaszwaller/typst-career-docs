@@ -47,6 +47,7 @@ projects:
     description: Development of a user-friendly portfolio using basic web technologies. HTML5, CSS3 and JavaScript. Use CSS Flexbox and Grid Layouts to develop a structured and responsive layout.
 education:
   - institution: Example University
+    link: example.com
     location: City, Country
     degree: B.Sc.
     grade: GPA 3.9/4.0
@@ -54,6 +55,7 @@ education:
     end: 2020-05-15
   - institution: Example High School
     location: City, Country
+    link: example.com
     degree: High School Diploma
     major: Artificial Intelligence
     grade: GPA 4.0/4.0

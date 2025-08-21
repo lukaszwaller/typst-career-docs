@@ -45,7 +45,7 @@
 
 #for xp in data.experience {
   grid(columns: (80%, 20%), [
-    *#xp.title*, #xp.company - #xp.location
+    *#xp.title*, #link("https://" + xp.link)[#xp.company] - #xp.location
   ], [
     #if xp.at("date") != none and xp.date != "" {
       align(right)[#xp.date]
@@ -53,23 +53,24 @@
   ])
 
   if xp.at("description") != none {
-    set par(leading: 0.6em)
+    set par(leading: 0.4em)
 
     if type(xp.description) == array {
       {
-        set list(indent: 0.6em, spacing: 0.4em)
-        show list: set block(above: 0.4em, below: 0.4em)
+        set list(indent: 0.6em, spacing: 0.6em)
+        show list: set block(above: 0.6em, below: 0.8em)
 
         for item in xp.description [
           - #item
         ]
       }
     } else {
-      set par(spacing: 0.2em)
-      xp.description
+        block(above: 0.6em, below: 0.8em)[
+            #set par(spacing: 0.1em)
+            #xp.description
+          ]
     }
   }
-  block(below: 0.2em)
 }
 
 == Projects
@@ -96,7 +97,7 @@
 
 #for edu in data.education {
   [
-    *#edu.institution* (#edu.location): *#edu.degree* - #edu.grade
+    #link("https://" + edu.link)[*#edu.institution*] (#edu.location): *#edu.degree* - #edu.grade
     #linebreak()
   ]
 }
