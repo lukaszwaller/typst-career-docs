@@ -1,3 +1,4 @@
+
 #let defaults = (
   name: "",
   email: "",
@@ -12,7 +13,8 @@
   skills: (languages: (), frameworks: (), others: ()),
 )
 
-#let data = defaults + yaml("me.yaml")
+#let data_file = sys.inputs.at("data", default: "me.yaml")
+#let data = defaults + yaml(data_file)
 
 #set page(margin: 15mm)
 #show link: underline
