@@ -10,14 +10,21 @@
   experience: (),
   projects: (),
   education: (),
-  skills: (languages: (), frameworks: (), others: ()),
+  skills: (
+    languages: (), 
+    frameworks: (),
+    devops: (),
+    core: (),
+    cloud: () 
+  ),
 )
 
-#let data_file = sys.inputs.at("data", default: "me.yaml")
+#let data_file = sys.inputs.at("data", default: "lukas.yaml")
 #let data = defaults + yaml(data_file)
 
 #set page(margin: 15mm)
-#show link: underline
+#show heading.where(level: 1): set text(size: 16pt, weight: 700)
+#show heading.where(level: 2): set text(size: 12pt, weight: 700)
 
 #align(center)[
   = #data.name
@@ -31,19 +38,29 @@
   #link("https://" + data.medium)[#data.medium]
 ]
 
+== Summary
+
+#line(length: 100%, stroke: 1pt + gray)
+
+#data.summary
+
 == Skills
 
-#line(length: 100%)
+#line(length: 100%, stroke: 1pt + gray)
 
-*Programming languages:* #(data.skills.languages.join(", "))
+*Languages:* #(data.skills.languages.join(", "))
 #linebreak()
 *Frameworks:* #(data.skills.frameworks.join(", "))
 #linebreak()
-*Cloud Architecture:* #(data.skills.others.join(", "))
+*DevOps:* #(data.skills.devops.join(", "))
+#linebreak()
+*Core Competencies:* #(data.skills.core.join(", "))
+#linebreak()
+*Cloud:* #(data.skills.cloud.join(", "))
 
 == Experience
 
-#line(length: 100%)
+#line(length: 100%, stroke: 1pt + gray)
 
 #for xp in data.experience {
   grid(columns: (80%, 20%), [
@@ -59,8 +76,8 @@
 
     if type(xp.description) == array {
       {
-        set list(indent: 0.6em, spacing: 0.6em)
-        show list: set block(above: 0.6em, below: 0.8em)
+        set list(indent: 1em, spacing: 0.8em)
+        show list: set block(above: 0.8em, below: 1em)
 
         for item in xp.description [
           - #item
@@ -68,7 +85,6 @@
       }
     } else {
         block(above: 0.6em, below: 0.8em)[
-            #set par(spacing: 0.1em)
             #xp.description
           ]
     }
@@ -77,7 +93,7 @@
 
 == Projects
 
-#line(length: 100%)
+#line(length: 100%, stroke: 1pt + gray)
 
 #for project in data.projects {
   grid(columns: (90%, 10%), [
@@ -95,11 +111,18 @@
 
 == Education
 
-#line(length: 100%)
+#line(length: 100%, stroke: 1pt + gray)
 
 #for edu in data.education {
-  [
-    #link("https://" + edu.link)[*#edu.institution*] (#edu.location): *#edu.degree* - #edu.grade
-    #linebreak()
+  block(above: 1em, below: 0.6em)[
+    #grid(columns: (80%, 20%),
+      [
+        #link("https://" + edu.link)[*#edu.institution*] (#edu.location): *#edu.degree* - #edu.grade
+      ], [
+        #if edu.at("date") != none and edu.date != "" {
+          align(right)[#edu.date]
+        }
+      ]
+    )
   ]
 }
