@@ -1,5 +1,9 @@
 
 #let defaults = (
+  metadata: (
+    title: "",
+    keywords: ()
+  ),
   name: "",
   email: "",
   phone: "",
@@ -21,6 +25,11 @@
 
 #let data_file = sys.inputs.at("data", default: "lukas.yaml")
 #let data = defaults + yaml(data_file)
+
+#set document(
+  title: data.metadata.title,
+  keywords: data.metadata.keywords,
+)
 
 #set page(margin: 15mm)
 #show heading.where(level: 1): set text(size: 16pt, weight: 700)
