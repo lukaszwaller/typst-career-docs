@@ -49,10 +49,11 @@ experience:
 projects:
   - name: Rust-Powered Enterprise Chatbot
     link: https://medium.com/
-    description: Designed a hybrid chatbot system combining Rust backend services with domain-specific knowledge retrieval to improve response accuracy and reduce latency in enterprise environments.
-  - name: Developer Portfolio
-    link: https://google.com
-    description: Created a responsive portfolio site showcasing Rust projects, cloud-native applications, and contributions to open-source async runtimes.
+    description: Designed a hybrid chatbot system combining Rust backend services with domain-specific knowledge retrieval to improve response accuracy and reduce latency in enterprise environments. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua
+portfolio:
+    website: alexfischer.dev
+    github: github.com/alexfischer
+    description:  Feel free to explore more of my fun projects showcasing various technologies on my website or GitHub.
 education:
   - institution: Technical University of Berlin
     link: google.de

@@ -13,6 +13,7 @@
   github: "",
   experience: (),
   projects: (),
+  portfolio: (),
   education: (),
   skills: (
     languages: (), 
@@ -34,6 +35,8 @@
 #set page(margin: 15mm)
 #show heading.where(level: 1): set text(size: 16pt, weight: 700)
 #show heading.where(level: 2): set text(size: 12pt, weight: 700)
+
+#show link: underline
 
 #align(center)[
   = #data.name
@@ -105,17 +108,18 @@
 #line(length: 100%, stroke: 1pt + gray)
 
 #for project in data.projects {
-  grid(columns: (90%, 10%), [
-    *#project.name*
-    #linebreak()
-    #project.description
-  ], if project.at("link") != none and project.link != "" {
-    align(right)[
-      #link(project.link)[View]
-    ]
-  } else {
-    []
-  })
+    [*#project.name* (#link("https://" + project.link)[Go to article])]
+    linebreak()
+    project.description
+    linebreak()
+}
+
+#if data.at("portfolio") != none {  
+  [*Portfolio* (#link("https://" + data.portfolio.website)[Go to portfolio])]
+  linebreak()
+  [Feel free to explore more of my fun projects showcasing various technologies on my 
+  #link(data.portfolio.website)[website] or #link(data.portfolio.github)[GitHub].]
+  linebreak()
 }
 
 == Education
