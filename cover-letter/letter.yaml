@@ -1,0 +1,25 @@
+metadata:
+  title: "Alex Fischer – Cover Letter"
+  keywords: ["Rust", "Tokio", "Actix", "AWS", "Backend Engineer", "Cover Letter"]
+address:
+  name: Alex Fischer
+  street: Sonnenallee
+  number: 123
+  zipcode: 12045
+  city: Berlin
+company:
+  name: Company GmbH
+  street: Hauptstraße
+  number: 5
+  zipcode: 10115
+  city: Berlin
+date: 27th of September 2025
+jobtitle: Engineer (m/f/d)
+recipent: Company Team
+paragraphs: [
+  "I am excited to apply for the Engineer position at Company GmbH. With a strong focus on Rust and cloud-native architectures, I specialize in building high-performance backend services that scale seamlessly. The chance to apply these skills to optimize large-scale fleets aligns perfectly with my passion for systems programming and real-time data processing.",
+  "In my current role, I designed a Rust-based telemetry ingestion pipeline using Tokio and Actix that reliably processes tens of millions of events per day with sub-millisecond latency. By leveraging async Rust, structured logging, and Prometheus observability, I was able to reduce tail latencies by over 40% while ensuring fault tolerance across multiple clusters.",
+  "I also developed secure serverless components in Rust, including custom AWS Lambda runtimes that cut cold start times significantly compared to Node.js implementations. This work taught me how to combine low-level systems knowledge with modern DevOps practices.",
+  "Beyond my professional work, I have pursued projects that deepen my expertise in Rust's ecosystem. I built a hybrid chatbot leveraging Rust's FFI to integrate with machine learning models, and I published a case study on applying Retrieval-Augmented Generation to enterprise environments. My open-source portfolio demonstrates my eagerness to experiment with concurrency models, type-safety, and zero-cost abstractions to deliver real-world value.",
+  "I am eager to bring my background in Rust, distributed systems, and fleet data optimization to the Fleet Optimization Team at Company GmbH. Thank you for considering my application. I would welcome the opportunity to discuss how my skills can contribute to building smarter, more efficient, and scalable backend solutions."
+]

@@ -1,4 +1,3 @@
-
 #let defaults = (
   metadata: (
     title: "",
@@ -24,7 +23,7 @@
   ),
 )
 
-#let data_file = sys.inputs.at("data", default: "lukas.yaml")
+#let data_file = sys.inputs.at("data", default: "me.yaml")
 #let data = defaults + yaml(data_file)
 
 #set document(
